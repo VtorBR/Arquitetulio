@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>QR</title>
+		<meta charset="UTF-8">
+		<script src="../qrcode-svg/dist/qrcode.min.js"></script>
+	</head>
+	<body>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1000" height="1000">
+			<rect x="200" y="200" width="600" height="600" style="fill:white;stroke-width:200;stroke:black" />
+			<g id="qr-code" transform="translate(350 350) scale(-1, 1) rotate(90 0 0)"></g>
+		</svg>
+		<script>
+			document.title = decodeURIComponent(window.location.search.substring(1));
+			var qrcode = new QRCode(
+			{
+				content: document.title,
+				padding: 0,
+				width: 300,
+				height: 300,
+				ecl: "L",
+			});
+			document.getElementById("qr-code").innerHTML = qrcode.svg();
+		</script>
+	</body>
+</html>
