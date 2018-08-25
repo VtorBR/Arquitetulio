@@ -1,3 +1,6 @@
 [submodule "aframe"]
 	path = aframe
 	url = https://github.com/aframevr/aframe.git
+[submodule "AR.js"]
+	path = AR.js
+	url = https://github.com/jeromeetienne/AR.js.git
