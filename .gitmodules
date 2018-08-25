@@ -4,3 +4,6 @@
 [submodule "AR.js"]
 	path = AR.js
 	url = https://github.com/jeromeetienne/AR.js.git
+[submodule "qcode-decoder"]
+	path = qcode-decoder
+	url = https://github.com/cirocosta/qcode-decoder.git
