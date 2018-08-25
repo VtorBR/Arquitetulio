@@ -7,3 +7,6 @@
 [submodule "qcode-decoder"]
 	path = qcode-decoder
 	url = https://github.com/cirocosta/qcode-decoder.git
+[submodule "qrcode-svg"]
+	path = qrcode-svg
+	url = https://github.com/papnkukn/qrcode-svg.git
