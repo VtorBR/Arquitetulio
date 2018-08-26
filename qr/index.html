@@ -6,10 +6,12 @@
 		<script src="../qrcode-svg/dist/qrcode.min.js"></script>
 	</head>
 	<body>
-		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1000" height="1000">
-			<rect x="200" y="200" width="600" height="600" style="fill:white;stroke-width:200;stroke:black" />
-			<g id="qr-code" transform="translate(350 350) scale(-1, 1) rotate(90 0 0)"></g>
-		</svg>
+		<a href="data:image/svg+xml;utf8," download="qr.svg">
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1000" height="1000">
+				<rect x="200" y="200" width="600" height="600" style="fill:white;stroke-width:200;stroke:black" />
+				<g id="qr-code" transform="translate(350 350) scale(-1, 1) rotate(90 0 0)"></g>
+			</svg>
+		</a>
 		<script>
 			document.title = decodeURIComponent(window.location.search.substring(1));
 			var qrcode = new QRCode(
@@ -21,6 +23,8 @@
 				ecl: "L",
 			});
 			document.getElementById("qr-code").innerHTML = qrcode.svg();
+			var a = document.querySelector('a');
+			a.href += encodeURIComponent(a.innerHTML);
 		</script>
 	</body>
 </html>
