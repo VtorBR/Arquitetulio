@@ -9,7 +9,7 @@
 		<script type="text/javascript" src="js/qr-scan.js"> </script>
 	</head>
 	<body style="margin : 0px; overflow: hidden;" onload="StartQrScan()">
-		<a-scene embedded>
+		<a-scene embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false">
 			<a-marker preset="custom" type="pattern" url="patt.qr">
 				<a-collada-model src=""></a-collada-model>
 			</a-marker>
