@@ -4,22 +4,20 @@ function StartQrScan()
 	var modelName;
 	if (video)
 	{
-		QCodeDecoder().decodeFromVideo(video, ScanQrCode, false);
+		QCodeDecoder().decodeFromVideo(video, function (error, result)
+		{
+			if (!error && result.slice(-4).toLowerCase() == ".dae" && result != modelName)
+			{
+				modelName = result;
+				alert(modelName);
+				ChangeModel(modelName);
+				console.log(modelName);
+			}
+		}, false);
 	}
 	else
 	{
 		setTimeout(StartQrScan, 1000);
-	}
-}
-
-function ScanQrCode(error, result)
-{
-	if (!error && result != modelName)
-	{
-		modelName = result;
-		alert(modelName);
-		ChangeModel(modelName);
-		console.log(modelName);
 	}
 }
 
