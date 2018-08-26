@@ -25,5 +25,4 @@ function ChangeModel(name)
 {
 	var model = document.querySelector('a-collada-model ');
 	model.setAttribute('collada-model', 'url(' + name + ')');
-	model.setAttribute("scale", '0.1 0.1 0.1');
 }
