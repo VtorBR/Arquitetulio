@@ -25,4 +25,5 @@ function ChangeModel(name)
 {
 	var model = document.querySelector('a-collada-model ');
 	model.setAttribute('collada-model', 'url(' + name + ')');
+	document.querySelector('a-scene').sceneEl.camera = new THREE.PerspectiveCamera();
 }
